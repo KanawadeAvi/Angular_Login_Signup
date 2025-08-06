@@ -1,0 +1,61 @@
+<div style="max-width: 600px; margin: 50px auto; padding: 20px; border-radius: 8px; box-shadow: 2px 2px 12px">
+  <h4 style="text-align: center;">Signup</h4>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+
+    <mat-form-field style="width: 100%;">
+      <mat-label>Enter your name</mat-label>
+      <input matInput type="text" formControlName="name">
+      <mat-error *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field style="width: 100%;">
+      <mat-label>Enter your Address</mat-label>
+      <input matInput type="text" formControlName="address">
+      <mat-error *ngIf="signupForm.get('address')?.touched && signupForm.get('address')?.invalid">
+        Address is required
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <div style="display: flex; gap: 20px;">
+      <mat-form-field appearance="fill" style="width: 50%;">
+        <mat-label>Enter Contact Number</mat-label>
+        <input matInput type="text" formControlName="contact">
+        <mat-error *ngIf="signupForm.get('contact')?.touched && signupForm.get('contact')?.invalid">
+          Valid 10-digit contact number is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 50%;">
+        <mat-label>Date</mat-label>
+        <input matInput type="date" formControlName="date">
+        <mat-error *ngIf="signupForm.get('date')?.touched && signupForm.get('date')?.invalid">
+          Date is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <br>
+
+    <mat-form-field style="width: 100%;">
+      <mat-label>Enter Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <mat-error *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+        Password must be at least 6 characters
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <div style="display: flex; justify-content: center;">
+      <button mat-raised-button color="primary" style="width: 50%;" type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
