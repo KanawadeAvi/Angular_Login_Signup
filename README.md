@@ -15,3 +15,13 @@ Here's a brief tech stack summary in points:
 ✅ Routing – Uses provideRouter() for navigation.
 
 ✅ Form validation – Built-in Validators ensure user input is correct.
+
+
+
+
+TO RUN PROJECT
+ - npm i
+ - ng serve
+TO RUN JSON SERVER
+ - npx json-server --watch db.json --port 3000
+
